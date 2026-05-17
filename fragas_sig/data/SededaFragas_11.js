@@ -1,0 +1,1 @@
+var json_SededaFragas_11 = {"type":"FeatureCollection","name":"SededaFragas_11","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"Tipo":"Sede da Fragas","Facebook":"https:\/\/pt-pt.facebook.com\/fragasaveloso\/"},"geometry":{"type":"Point","coordinates":[-8.05028,40.82944]}}]}

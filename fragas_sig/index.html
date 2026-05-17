@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="https://joaoambiente.github.io/fragas-static/fragas_sig/css/leaflet.css">
+        <link rel="stylesheet" href="https://joaoambiente.github.io/fragas-static/fragas_sig/css/qgis2web.css"><link rel="stylesheet" href="https://joaoambiente.github.io/fragas-static/fragas_sig/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="https://joaoambiente.github.io/fragas-static/fragas_sig/css/leaflet-measure.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/js/qgis2web_expressions.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/js/leaflet.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/js/leaflet.rotatedMarker.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/js/leaflet.pattern.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/js/leaflet-hash.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/js/Autolinker.min.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/js/rbush.min.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/js/labelgun.min.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/js/labels.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/js/leaflet-measure.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/data/Rompecilha_0.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/data/RibeiradaVagem_1.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/data/MoinhosdeAgua_2.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/data/TrajectosentreAldeias_3.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/data/Aldeias_5A5D_4.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/data/COS2015_7.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/data/ConcelhoSPdoSul_8.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/data/FreguesiasSPdoSul_9.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/data/Sul_10.js"></script>
+        <script src="https://joaoambiente.github.io/fragas-static/fragas_sig/data/SededaFragas_11.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:12
+        }).fitBounds([[40.7993014651795,-8.109921437816043],[40.896882137683924,-7.931186005933628]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web &middot; <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet');
+        
+	
+		var measureControl = new L.Control.Measure({
+            position: 'topleft',
+            primaryLengthUnit: 'meters',
+            secondaryLengthUnit: 'kilometers',
+            primaryAreaUnit: 'sqmeters',
+            secondaryAreaUnit: 'hectares'
+        });
+        measureControl.addTo(map);
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+        .innerHTML = '';
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+        .className += ' fas fa-ruler';
+        
+		L.control.scale({imperial: false}).addTo(map);
+		
+		
+		var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        function pop_Rompecilha_0(feature, layer) {
+        }
+
+        function style_Rompecilha_0_0() {
+            return {
+                pane: 'pane_Rompecilha_0',
+                opacity: 1,
+                color: 'rgba(255,158,23,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+            }
+        }
+        map.createPane('pane_Rompecilha_0');
+        map.getPane('pane_Rompecilha_0').style.zIndex = 400;
+        map.getPane('pane_Rompecilha_0').style['mix-blend-mode'] = 'normal';
+        var layer_Rompecilha_0 = new L.geoJson(json_Rompecilha_0, {
+            attribution: '',
+            pane: 'pane_Rompecilha_0',
+            onEachFeature: pop_Rompecilha_0,
+            style: style_Rompecilha_0_0,
+        });
+        bounds_group.addLayer(layer_Rompecilha_0);
+        function pop_RibeiradaVagem_1(feature, layer) {
+        }
+
+        function style_RibeiradaVagem_1_0() {
+            return {
+                pane: 'pane_RibeiradaVagem_1',
+                opacity: 1,
+                color: 'rgba(125,139,143,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+            }
+        }
+        map.createPane('pane_RibeiradaVagem_1');
+        map.getPane('pane_RibeiradaVagem_1').style.zIndex = 401;
+        map.getPane('pane_RibeiradaVagem_1').style['mix-blend-mode'] = 'normal';
+        var layer_RibeiradaVagem_1 = new L.geoJson(json_RibeiradaVagem_1, {
+            attribution: '',
+            pane: 'pane_RibeiradaVagem_1',
+            onEachFeature: pop_RibeiradaVagem_1,
+            style: style_RibeiradaVagem_1_0,
+        });
+        bounds_group.addLayer(layer_RibeiradaVagem_1);
+        function pop_MoinhosdeAgua_2(feature, layer) {
+        }
+
+        function style_MoinhosdeAgua_2_0() {
+            return {
+                pane: 'pane_MoinhosdeAgua_2',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/tourist_windmill.svg',
+            iconSize: [19.0, 19.0]
+        }),
+            }
+        }
+        map.createPane('pane_MoinhosdeAgua_2');
+        map.getPane('pane_MoinhosdeAgua_2').style.zIndex = 402;
+        map.getPane('pane_MoinhosdeAgua_2').style['mix-blend-mode'] = 'normal';
+        var layer_MoinhosdeAgua_2 = new L.geoJson(json_MoinhosdeAgua_2, {
+            attribution: '',
+            pane: 'pane_MoinhosdeAgua_2',
+            onEachFeature: pop_MoinhosdeAgua_2,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.marker(latlng, style_MoinhosdeAgua_2_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_MoinhosdeAgua_2);
+        function pop_TrajectosentreAldeias_3(feature, layer) {
+        }
+
+        function style_TrajectosentreAldeias_3_0() {
+            return {
+                pane: 'pane_TrajectosentreAldeias_3',
+                opacity: 1,
+                color: 'rgba(54,86,229,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+            }
+        }
+        map.createPane('pane_TrajectosentreAldeias_3');
+        map.getPane('pane_TrajectosentreAldeias_3').style.zIndex = 403;
+        map.getPane('pane_TrajectosentreAldeias_3').style['mix-blend-mode'] = 'normal';
+        var layer_TrajectosentreAldeias_3 = new L.geoJson(json_TrajectosentreAldeias_3, {
+            attribution: '',
+            pane: 'pane_TrajectosentreAldeias_3',
+            onEachFeature: pop_TrajectosentreAldeias_3,
+            style: style_TrajectosentreAldeias_3_0,
+        });
+        bounds_group.addLayer(layer_TrajectosentreAldeias_3);
+        function pop_Aldeias_5A5D_4(feature, layer) {
+        }
+
+        function style_Aldeias_5A5D_4_0() {
+            return {
+                pane: 'pane_Aldeias_5A5D_4',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/accommodation_house.svg',
+            iconSize: [19.0, 19.0]
+        }),
+            }
+        }
+        map.createPane('pane_Aldeias_5A5D_4');
+        map.getPane('pane_Aldeias_5A5D_4').style.zIndex = 404;
+        map.getPane('pane_Aldeias_5A5D_4').style['mix-blend-mode'] = 'normal';
+        var layer_Aldeias_5A5D_4 = new L.geoJson(json_Aldeias_5A5D_4, {
+            attribution: '',
+            pane: 'pane_Aldeias_5A5D_4',
+            onEachFeature: pop_Aldeias_5A5D_4,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.marker(latlng, style_Aldeias_5A5D_4_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Aldeias_5A5D_4);
+        var layer_Satelite_5 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+            opacity: 1.0,
+            attribution: '',
+        });
+        layer_Satelite_5;
+        var layer_Mapa_6 = L.tileLayer('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            opacity: 1.0,
+            attribution: '',
+        });
+        layer_Mapa_6;
+        map.addLayer(layer_Mapa_6);
+        function pop_COS2015_7(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>Tipo de Uso<br />' + (feature.properties['Megaclasse'] !== null ? Autolinker.link(String(feature.properties['Megaclasse'])) : '') + '\
+                    \
+                    <tr>\
+                        <td colspan="2"><strong>&Aacute;rea (ha)<br />' + (feature.properties['AREA'] !== null ? Autolinker.link(String(feature.properties['AREA'])) : '') + '\
+                    \
+                ';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_COS2015_7_0(feature) {
+            switch(String(feature.properties['Megaclasse'])) {
+                case 'Agricultura':
+                    return {
+                pane: 'pane_COS2015_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(242,220,32,1.0)',
+            }
+                    break;
+                case 'Corpos de &aacute;gua':
+                    return {
+                pane: 'pane_COS2015_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(109,156,207,1.0)',
+            }
+                    break;
+                case 'Espa&ccedil;os descobertos ou com vegeta&ccedil;&atilde;o esparsa':
+                    return {
+                pane: 'pane_COS2015_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(31,216,114,1.0)',
+            }
+                    break;
+                case 'Florestas':
+                    return {
+                pane: 'pane_COS2015_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(85,125,46,1.0)',
+            }
+                    break;
+                case 'Matos':
+                    return {
+                pane: 'pane_COS2015_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(133,182,111,1.0)',
+            }
+                    break;
+                case 'Pastagens':
+                    return {
+                pane: 'pane_COS2015_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(238,229,183,1.0)',
+            }
+                    break;
+                case 'Sistemas agro-florestais':
+                    return {
+                pane: 'pane_COS2015_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,202,98,1.0)',
+            }
+                    break;
+                case 'Territ&oacute;rios artificializados':
+                    return {
+                pane: 'pane_COS2015_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(93,93,93,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_COS2015_7');
+        map.getPane('pane_COS2015_7').style.zIndex = 407;
+        map.getPane('pane_COS2015_7').style['mix-blend-mode'] = 'normal';
+        var layer_COS2015_7 = new L.geoJson(json_COS2015_7, {
+            attribution: '',
+            pane: 'pane_COS2015_7',
+            onEachFeature: pop_COS2015_7,
+            style: style_COS2015_7_0,
+        });
+        bounds_group.addLayer(layer_COS2015_7);
+        function pop_ConcelhoSPdoSul_8(feature, layer) {
+        }
+
+        function style_ConcelhoSPdoSul_8_0() {
+            return {
+                pane: 'pane_ConcelhoSPdoSul_8',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 8.0, 
+                fillOpacity: 0,
+            }
+        }
+        map.createPane('pane_ConcelhoSPdoSul_8');
+        map.getPane('pane_ConcelhoSPdoSul_8').style.zIndex = 408;
+        map.getPane('pane_ConcelhoSPdoSul_8').style['mix-blend-mode'] = 'normal';
+        var layer_ConcelhoSPdoSul_8 = new L.geoJson(json_ConcelhoSPdoSul_8, {
+            attribution: '',
+            pane: 'pane_ConcelhoSPdoSul_8',
+            onEachFeature: pop_ConcelhoSPdoSul_8,
+            style: style_ConcelhoSPdoSul_8_0,
+        });
+        bounds_group.addLayer(layer_ConcelhoSPdoSul_8);
+        map.addLayer(layer_ConcelhoSPdoSul_8);
+        function pop_FreguesiasSPdoSul_9(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>&Aacute;rea (ha)<br />' + (feature.properties['AREA_T_Ha'] !== null ? Autolinker.link(String(feature.properties['AREA_T_Ha'])) : '') + '\
+                    \
+                    <tr>\
+                        <td colspan="2"><strong>Freguesia<br />' + (feature.properties['Des_Simpli'] !== null ? Autolinker.link(String(feature.properties['Des_Simpli'])) : '') + '\
+                    \
+                ';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_FreguesiasSPdoSul_9_0() {
+            return {
+                pane: 'pane_FreguesiasSPdoSul_9',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fillOpacity: 0,
+            }
+        }
+        map.createPane('pane_FreguesiasSPdoSul_9');
+        map.getPane('pane_FreguesiasSPdoSul_9').style.zIndex = 409;
+        map.getPane('pane_FreguesiasSPdoSul_9').style['mix-blend-mode'] = 'normal';
+        var layer_FreguesiasSPdoSul_9 = new L.geoJson(json_FreguesiasSPdoSul_9, {
+            attribution: '',
+            pane: 'pane_FreguesiasSPdoSul_9',
+            onEachFeature: pop_FreguesiasSPdoSul_9,
+            style: style_FreguesiasSPdoSul_9_0,
+        });
+        bounds_group.addLayer(layer_FreguesiasSPdoSul_9);
+        map.addLayer(layer_FreguesiasSPdoSul_9);
+        function pop_Sul_10(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>&Aacute;rea (ha)<br />' + (feature.properties['AREA_T_Ha'] !== null ? Autolinker.link(String(feature.properties['AREA_T_Ha'])) : '') + '\
+                    \
+                    <tr>\
+                        <td colspan="2"><strong>Freguesia<br />' + (feature.properties['Des_Simpli'] !== null ? Autolinker.link(String(feature.properties['Des_Simpli'])) : '') + '\
+                    \
+                ';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Sul_10_0() {
+            return {
+                pane: 'pane_Sul_10',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 4.0, 
+                fillOpacity: 0,
+            }
+        }
+        map.createPane('pane_Sul_10');
+        map.getPane('pane_Sul_10').style.zIndex = 410;
+        map.getPane('pane_Sul_10').style['mix-blend-mode'] = 'normal';
+        var layer_Sul_10 = new L.geoJson(json_Sul_10, {
+            attribution: '',
+            pane: 'pane_Sul_10',
+            onEachFeature: pop_Sul_10,
+            style: style_Sul_10_0,
+        });
+        bounds_group.addLayer(layer_Sul_10);
+        map.addLayer(layer_Sul_10);
+        function pop_SededaFragas_11(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Tipo'] !== null ? Autolinker.link(String(feature.properties['Tipo'])) : '') + '\
+                    \
+                    <tr>\
+                        <td colspan="2"><strong>Facebook<br />' + (feature.properties['Facebook'] !== null ? Autolinker.link(String(feature.properties['Facebook'])) : '') + '\
+                    \
+                ';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_SededaFragas_11_0() {
+            return {
+                pane: 'pane_SededaFragas_11',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/accommodation_youth_hostel.svg',
+            iconSize: [22.799999999999997, 22.799999999999997]
+        }),
+            }
+        }
+        map.createPane('pane_SededaFragas_11');
+        map.getPane('pane_SededaFragas_11').style.zIndex = 411;
+        map.getPane('pane_SededaFragas_11').style['mix-blend-mode'] = 'normal';
+        var layer_SededaFragas_11 = new L.geoJson(json_SededaFragas_11, {
+            attribution: '',
+            pane: 'pane_SededaFragas_11',
+            onEachFeature: pop_SededaFragas_11,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.marker(latlng, style_SededaFragas_11_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_SededaFragas_11);
+        map.addLayer(layer_SededaFragas_11);
+
+//Grouping layers
+		var baseMaps = {"Mapa": layer_Mapa_6, "Satelite": layer_Satelite_5};
+		var overlaymaps = {'<img src="legend/SededaFragas_11.png" /> Sede da Fragas': layer_SededaFragas_11,'<img src="legend/Sul_10.png" /> Sul': layer_Sul_10,'<img src="legend/FreguesiasSPdoSul_9.png" /> Freguesias SP do Sul': layer_FreguesiasSPdoSul_9,'<img src="legend/ConcelhoSPdoSul_8.png" /> Concelho SP do Sul': layer_ConcelhoSPdoSul_8,'<img src="legend/Aldeias_5A5D_4.png" /> Aldeias_5A5D': layer_Aldeias_5A5D_4,'<img src="legend/TrajectosentreAldeias_3.png" /> Trajectos entre Aldeias': layer_TrajectosentreAldeias_3,'<img src="legend/MoinhosdeAgua_2.png" /> Moinhos de Agua': layer_MoinhosdeAgua_2,'<img src="legend/RibeiradaVagem_1.png" /> Ribeira da Vagem': layer_RibeiradaVagem_1,'<img src="legend/Rompecilha_0.png" /> Rompecilha': layer_Rompecilha_0,'Uso do Solo (2015)<br /><table><tr><td style="text-align: center;"><img src="legend/COS2015_7_Agricultura0.png" /><td>Agricultura<tr><td style="text-align: center;"><img src="legend/COS2015_7_Corposde&aacute;gua1.png" /><td>Corpos de &aacute;gua<tr><td style="text-align: center;"><img src="legend/COS2015_7_Espa&ccedil;osdescobertosoucomvegeta&ccedil;&atilde;oesparsa2.png" /><td>Espa&ccedil;os descobertos ou com vegeta&ccedil;&atilde;o esparsa<tr><td style="text-align: center;"><img src="legend/COS2015_7_Florestas3.png" /><td>Florestas<tr><td style="text-align: center;"><img src="legend/COS2015_7_Matos4.png" /><td>Matos<tr><td style="text-align: center;"><img src="legend/COS2015_7_Pastagens5.png" /><td>Pastagens<tr><td style="text-align: center;"><img src="legend/COS2015_7_Sistemasagroflorestais6.png" /><td>Sistemas agro-florestais<tr><td style="text-align: center;"><img src="legend/COS2015_7_Territ&oacute;riosartificializados7.png" /><td>Territ&oacute;rios artificializados': layer_COS2015_7,};
+		        
+        L.control.layers(baseMaps, overlaymaps).addTo(map);
+        setBounds();
+
+
+        var i = 0;
+        layer_Aldeias_5A5D_4.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['Name'] !== null?String('<div style="color: #000000; font-size: 10pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['Name']) + '':''), {permanent: true, offset: [-0, -16], className: 'css_Aldeias_5A5D_4'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_FreguesiasSPdoSul_9.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['Des_Simpli'] !== null?String('<div style="color: #000000; font-size: 10pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['Des_Simpli']) + '':''), {permanent: true, offset: [-0, -16], className: 'css_FreguesiasSPdoSul_9'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_Sul_10.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['Des_Simpli'] !== null?String('<div style="color: #000000; font-size: 13pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['Des_Simpli']) + '':''), {permanent: true, offset: [-0, -16], className: 'css_Sul_10'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_SededaFragas_11.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['Tipo'] !== null?String('<div style="color: #000000; font-size: 10pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['Tipo']) + '':''), {permanent: true, offset: [-0, -16], className: 'css_SededaFragas_11'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        resetLabels([layer_Aldeias5A5D_4,layer_FreguesiasSPdoSul_9,layer_Sul_10,layer_SededaFragas_11]);
+        map.on("zoomend", function(){
+            resetLabels([layer_Aldeias5A5D_4,layer_FreguesiasSPdoSul_9,layer_Sul_10,layer_SededaFragas_11]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_Aldeias5A5D_4,layer_FreguesiasSPdoSul_9,layer_Sul_10,layer_SededaFragas_11]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_Aldeias5A5D_4,layer_FreguesiasSPdoSul_9,layer_Sul_10,layer_SededaFragas_11]);
+        });
+        </script>
+    </body>
+</html>
+<!-- Powered by Staatic (https://staatic.com/) -->
